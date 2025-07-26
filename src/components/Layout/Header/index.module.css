@@ -1,8 +1,15 @@
-.header {
-  background-color: var(--mantine-color-body);
-  border-bottom: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
-  padding-left: var(--mantine-spacing-md);
-  padding-right: var(--mantine-spacing-md);
+.container {
+  position: inherit;
+}
+
+.navbar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 8px;
+  background-color: white;
+  z-index: 100;
+  position: fixed;
 }
 
 .inner {

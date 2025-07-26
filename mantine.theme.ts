@@ -1,6 +1,6 @@
 "use client";
 
-import { Outfit } from "next/font/google";
+import { Arimo } from "next/font/google";
 import {
   Button,
   createTheme,
@@ -19,20 +19,22 @@ import {
 
 // import style from "@/styles/mantine.module.css";
 
-const fontOutfit = Outfit({
-  subsets: ["latin"],
-  style: "normal",
-  variable: "--font-outfit",
-  weight: ["300", "400", "500", "600", "700"],
-});
+// const fontArimo = Arimo({
+//   subsets: ["latin"],
+//   style: "normal",
+//   variable: "--font-arimo",
+//   weight: ["400", "700"],
+// });
 
-const customColors = {};
+const customColors = {
+  "own-neutral-300": "#333333",
+};
 
 const theme: MantineThemeOverride = {
   ...DEFAULT_THEME,
-  fontFamily: fontOutfit.style.fontFamily,
+  fontFamily: "Zapf Humanist, sans-serif",
   headings: {
-    fontFamily: fontOutfit.style.fontFamily,
+    fontFamily: "Zapf Humanist, serif",
     sizes: {
       h1: {
         fontSize: rem(48),

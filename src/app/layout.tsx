@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { Metadata } from "next";
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
 
@@ -9,20 +8,15 @@ import "./globals.css";
 import "@mantine/core/styles.css";
 import "@mantine/nprogress/styles.css";
 import "@mantine/notifications/styles.css";
-
+import "@mantine/carousel/styles.css";
 // import "@mantine/dates/styles.css";
-// import "@mantine/carousel/styles.css";
 // import "@mantine/tiptap/styles.css";
 // import "@mantine/dropzone/styles.css";
 // import "@mantine/charts/styles.css";
 
-import classes from "./index.module.css";
-import MantineProgressHandler from "./MantineProgressHandler";
+import "@/styles/font.css";
 
-export const metadata: Metadata = {
-  title: "Tawas",
-  description: "Landing page for Tawas",
-};
+import MantineProgressHandler from "./MantineProgressHandler";
 
 export default function RootLayout({
   children,
@@ -34,15 +28,11 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript defaultColorScheme="dark" />
         <link rel="shortcut icon" href="/favicon.svg" />
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        {/* <meta name="description" content="Learn more about MyTaskApp and our mission to simplify task management." /> */}
       </head>
       <body>
-        <MantineProvider
-          defaultColorScheme="dark"
-          cssVariablesSelector="html"
-          theme={mantinetheme}
-          cssVariablesResolver={resolver}
-        >
+        <MantineProvider defaultColorScheme="dark" theme={mantinetheme} cssVariablesResolver={resolver}>
           <Notifications />
           <MantineProgressHandler />
           {children}

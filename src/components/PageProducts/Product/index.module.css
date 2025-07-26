@@ -1,0 +1,15 @@
+.product:hover {
+  background-color: var(--mantine-color-tasman-1);
+  cursor: pointer;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.iconShopping {
+  position: absolute;
+  right: 10;
+  bottom: 20;
+  color: black;
+}

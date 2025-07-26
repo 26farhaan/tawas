@@ -1,0 +1,15 @@
+.root {
+  /* border: 1px solid red; */
+}
+
+.indicators {
+  bottom: -36;
+  gap: 0;
+}
+
+.indicator {
+  width: 100%;
+  background-color: var(--mantine-color-tasman-9);
+  border-radius: 0;
+  height: 3px;
+}

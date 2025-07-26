@@ -1,8 +1,16 @@
 // app/produk-tawas/page.tsx
-import { HeroLanding } from "@/components/Landing/HeroLanding";
+import { Metadata } from "next";
+
+import Banner from "@/components/PageLanding/Banner";
+import Caption from "@/components/PageLanding/Caption";
+import Gallery from "@/components/PageLanding/Gallery";
+import { Hero } from "@/components/PageLanding/Hero";
+import Highlight from "@/components/PageLanding/Highlight";
+import Journal from "@/components/PageLanding/Journal";
+import Products from "@/components/PageLanding/Products";
 
 // Metadata untuk SEO (Next.js akan masukkan ke <head>)
-export const metadata = {
+export const metadata: Metadata = {
   title: "Deodoran Tawas Alami | Hilangkan Bau Badan Tanpa Bahan Kimia",
   description:
     "Temukan manfaat deodoran tawas alami untuk kesehatan kulit dan menghilangkan bau badan. Aman, tanpa bahan kimia, dan cocok untuk semua jenis kulit.",
@@ -24,36 +32,14 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="p-8 max-w-3xl mx-auto">
-      <HeroLanding />
-
-      <section>
-        <h2 className="text-xl font-semibold mb-2">Mengapa Memilih Tawas?</h2>
-        <p className="mb-4">
-          Tawas adalah mineral alami yang dikenal sejak lama sebagai penghilang bau badan dan pembunuh bakteri. Tidak
-          seperti deodoran biasa, tawas tidak mengandung alkohol atau parfum yang bisa menyebabkan iritasi kulit.
-        </p>
-      </section>
-
-      <section>
-        <h2 className="text-xl font-semibold mb-2">Manfaat Deodoran Tawas</h2>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>Menghilangkan bau badan secara alami</li>
-          <li>Tidak menyumbat pori-pori</li>
-          <li>Aman untuk kulit sensitif</li>
-          <li>Tidak meninggalkan noda di pakaian</li>
-        </ul>
-      </section>
-
-      <section className="mt-6">
-        <h2 className="text-xl font-semibold mb-2">Beli Sekarang</h2>
-        <p>
-          Tersedia dalam bentuk stick dan serbuk.{" "}
-          <a href="/produk" className="text-blue-600 underline">
-            Lihat produk tawas kami &rarr;
-          </a>
-        </p>
-      </section>
+    <main>
+      <Hero />
+      <Highlight />
+      <Banner />
+      <Products />
+      <Caption />
+      <Gallery />
+      <Journal />
     </main>
   );
 }
