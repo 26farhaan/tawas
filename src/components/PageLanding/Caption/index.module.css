@@ -1,4 +1,4 @@
 .root {
-  background-color: var(--mantine-color-tasman-1);
+  background-color: light-dark(var(--mantine-color-tasman-1), var(--mantine-color-gray-9));
   height: 408px;
 }

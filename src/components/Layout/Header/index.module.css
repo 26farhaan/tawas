@@ -7,7 +7,7 @@
   left: 0;
   width: 100%;
   padding: 8px 8px;
-  background-color: white;
+  background-color: light-dark(white, var(--mantine-color-gray-8));
   z-index: 100;
   position: fixed;
 }

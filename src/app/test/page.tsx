@@ -5,13 +5,13 @@ import { useEffect } from "react";
 import TextComponent from "@/components/TestComponent";
 import ENDPOINTS from "@/constants/endpoints";
 import { getCookie } from "@/libs/auth-actions";
-import apiService from "@/utils/axios";
+import apiService from "@/libs/axios";
 
 export default function TextPage() {
   const getData = async () => {
     try {
       console.log("Fetching data...");
-      const response = await apiService.get(ENDPOINTS.ME, {
+      const response = await apiService.get(ENDPOINTS.GET_ME, {
         headers: { Authorization: `Bearer ${getCookie("access_token")}` },
       });
       console.log("Data fetched successfully:", response.data);
@@ -21,7 +21,7 @@ export default function TextPage() {
   };
 
   useEffect(() => {
-    getData();
+    // getData();
   }, []);
   return (
     <main className="p-8 max-w-md mx-auto">

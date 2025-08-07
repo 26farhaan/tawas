@@ -1,6 +1,5 @@
-import { Anchor, Box, Flex, Text } from "@mantine/core";
+import { Box, Text } from "@mantine/core";
 
-import IconArrowRight from "@/components/icons/IconArrowRight";
 import CarouselProducts from "./carousel";
 
 const Products = () => {
@@ -13,14 +12,6 @@ const Products = () => {
         </Text>
         <Text>Discover our potent antioxidant-rich Parsley Seed Skin Care, perfect for all skin types.</Text>
         <CarouselProducts />
-        <Box mt={64}>
-          <Anchor href="#" target="_blank" rel="noopener noreferrer">
-            <Flex c="black" align="center" gap={12}>
-              <Text>All products</Text>
-              <IconArrowRight size={18} />
-            </Flex>
-          </Anchor>
-        </Box>
       </Box>
     </section>
   );

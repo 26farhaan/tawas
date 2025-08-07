@@ -17,6 +17,7 @@ import "@mantine/carousel/styles.css";
 import "@/styles/font.css";
 
 import MantineProgressHandler from "./MantineProgressHandler";
+import Providers from "./Providers";
 
 export default function RootLayout({
   children,
@@ -26,16 +27,16 @@ export default function RootLayout({
   return (
     <html lang="en" {...mantineHtmlProps}>
       <head>
-        <ColorSchemeScript defaultColorScheme="dark" />
+        <ColorSchemeScript defaultColorScheme="auto" />
         <link rel="shortcut icon" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         {/* <meta name="description" content="Learn more about MyTaskApp and our mission to simplify task management." /> */}
       </head>
       <body>
-        <MantineProvider defaultColorScheme="dark" theme={mantinetheme} cssVariablesResolver={resolver}>
+        <MantineProvider defaultColorScheme="auto" theme={mantinetheme} cssVariablesResolver={resolver}>
           <Notifications />
           <MantineProgressHandler />
-          {children}
+          <Providers>{children}</Providers>
         </MantineProvider>
       </body>
     </html>

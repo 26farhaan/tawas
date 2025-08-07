@@ -72,17 +72,14 @@ export function UseFooter() {
           © 2020 mantine.dev. All rights reserved.
         </Text>
 
-        <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">
+        {/* <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">
           <ActionIcon size="lg" color="gray" variant="subtle">
-            {/* <IconBrandTwitter size={18} stroke={1.5} /> */}
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
-            {/* <IconBrandYoutube size={18} stroke={1.5} /> */}
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
-            {/* <IconBrandInstagram size={18} stroke={1.5} /> */}
           </ActionIcon>
-        </Group>
+        </Group> */}
       </Container>
     </footer>
   );

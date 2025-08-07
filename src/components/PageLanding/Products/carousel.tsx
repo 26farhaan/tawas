@@ -3,11 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Carousel } from "@mantine/carousel";
-import { Box, Text } from "@mantine/core";
+import { Anchor, Box, Flex, Text, useComputedColorScheme } from "@mantine/core";
 
+import IconArrowRight from "@/components/icons/IconArrowRight";
 import classes from "./carousel.module.css";
 
 const CarouselProducts = () => {
+  const isLight = useComputedColorScheme() === "light";
+
   const [datas, setDatas] = useState<number[]>([1, 2, 3, 4, 1, 2, 3, 4]);
 
   return (
@@ -44,6 +47,14 @@ const CarouselProducts = () => {
           </Carousel.Slide>
         ))}
       </Carousel>
+      <Box mt={64}>
+        <Anchor href="#" target="_blank" rel="noopener noreferrer">
+          <Flex c={isLight ? "black" : "white"} align="center" gap={12}>
+            <Text>All products</Text>
+            <IconArrowRight size={18} />
+          </Flex>
+        </Anchor>
+      </Box>
     </Box>
   );
 };

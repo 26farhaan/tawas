@@ -20,7 +20,7 @@ import { zodResolver } from "mantine-form-zod-resolver";
 
 import ENDPOINTS from "@/constants/endpoints";
 // import { setCookie } from "@/libs/auth-actions";
-import apiService from "@/utils/axios";
+import apiService from "@/libs/axios";
 import promiseWrapper from "@/utils/promiseWrapper";
 import classes from "./index.module.css";
 import { loginSchema } from "./schema";
@@ -30,7 +30,7 @@ export function LoginForm() {
 
   const form = useForm({
     initialValues: {
-      username: "",
+      email: "",
       password: "",
       remember_me: false,
     },
@@ -46,7 +46,7 @@ export function LoginForm() {
     if (errorLogin) {
       const errors = errorLogin?.response?.data?.detail;
       if (Array.isArray(errors)) {
-        errorLogin?.response?.data?.detail.forEach(({ detail }) => {
+        errorLogin?.response?.data?.detail?.forEach(({ detail }) => {
           notifications.show({
             color: "red",
             title: "Oops!",
@@ -72,7 +72,7 @@ export function LoginForm() {
       //   errPermissions
       // ]
     ] = await Promise.all([
-      promiseWrapper(apiService.get(ENDPOINTS.ME)),
+      promiseWrapper(apiService.get(ENDPOINTS.GET_ME)),
       // promiseWrapper(apiService.get<ResponseData<string[]>>(ENDPOINTS.GET_AUTH_PERMISSIONS)),
     ]);
 
@@ -110,7 +110,7 @@ export function LoginForm() {
       <form onSubmit={handleSubmit}>
         <Paper withBorder shadow="sm" p={22} mt={30} radius="md">
           <TextInput
-            {...form.getInputProps("username")}
+            {...form.getInputProps("email")}
             label="Email"
             placeholder="you@mantine.dev"
             required

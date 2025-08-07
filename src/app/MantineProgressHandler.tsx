@@ -19,5 +19,5 @@ export default function MantineProgressHandler() {
     return () => clearTimeout(timeout);
   }, [pathname]);
 
-  return <NavigationProgress />;
+  return <NavigationProgress aria-label="progress-page" />;
 }
